@@ -6,29 +6,38 @@ public class PlatformSpawnerScript : MonoBehaviour
 {
     public GameObject platform;
     private int platformHight;
-    private int playerPos;
+    private GameObject player;
+
+    private int lastSpawnPositionY = 0;
+    public int platformDistance = 20;
+    public int xOffset = 0;
 
     //ladder activated maybe?
     bool needToGenerate = false;
 
+    public float PlayerPos;
+
 
     // Start is called before the first frame update
-    void Start()
-    {
-        playerPos = GameObject.FindWithTag("Player");
+    void Start(){
+        player = GameObject.FindWithTag("Player");
+        PlayerPos = player.transform.position.y;
+        Instantiate(platform, new Vector3(0, 20, 0), Quaternion.identity);
+        lastSpawnPositionY = 20;
 
-        /*
-        var pos = playerPos.transform.position.x;
-        */
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (needToGenerate)
-        {
+        PlayerPos = player.transform.position.y;
+        var distanceFromNextPlatform = lastSpawnPositionY - PlayerPos;
 
-        }   
+        if(distanceFromNextPlatform < 15)
+        {
+            GeneratePlatform(xOffset, lastSpawnPositionY + platformDistance);
+            lastSpawnPositionY += platformDistance;
+        }
 
        
     }

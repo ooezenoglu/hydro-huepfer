@@ -5,20 +5,22 @@ using UnityEngine;
 public class LevelScript : MonoBehaviour
 {
     public int destructionDistance = 20;
-    public gameObject player;
+    public GameObject player;
+    public float playerPos;
 
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        var pos = playerPos.transform.position.x;
+        playerPos = player.transform.position.y;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        playerPos = player.transform.position.y;
         if (playerPos - destructionDistance > transform.position.y)
         {
             Debug.Log("platform deleted");
