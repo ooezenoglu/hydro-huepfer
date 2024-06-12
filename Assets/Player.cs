@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        isGrounded = true;
     }
 
     // Update is called once per frame
@@ -46,7 +47,7 @@ public class Player : MonoBehaviour
         transform.Translate(movement);
 
         // Sprungaktion hinzufügen
-        if (Input.GetKeyDown(KeyCode.UpArrow) /*&& isGrounded*/)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
         {
             animator.SetTrigger("Jump");
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
