@@ -5,14 +5,18 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Animator animator;
+    private Rigidbody2D rb;
+    private bool isGrounded;
+
+    public float moveSpeed = 5f; // Geschwindigkeit der Bewegung
+    public float jumpForce = 0.1f; // Sprungkraft
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
-
-    public float moveSpeed = 5f; // Geschwindigkeit der Bewegung
 
     // Update is called once per frame
     void Update()
@@ -30,11 +34,32 @@ public class Player : MonoBehaviour
             animator.SetTrigger("WalkRight");
             moveHorizontal = 1f; // Bewegung nach rechts
         }
+        else
+        {
+            animator.SetTrigger("Stand"); // Standbild setzen, wenn keine Pfeiltasten gedrückt werden
+        }
 
         // Berechnung der Bewegung basierend auf der Tasteneingabe
         Vector3 movement = new Vector3(moveHorizontal, 0f, 0f) * moveSpeed * Time.deltaTime;
 
         // Bewegung anwenden
         transform.Translate(movement);
+
+        // Sprungaktion hinzufügen
+        if (Input.GetKeyDown(KeyCode.UpArrow) /*&& isGrounded*/)
+        {
+            animator.SetTrigger("Jump");
+            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            isGrounded = false;
+        }
+    }
+
+    // Überprüfung auf Bodenberührung
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
     }
 }
