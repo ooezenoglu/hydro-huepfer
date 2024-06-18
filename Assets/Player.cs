@@ -52,6 +52,7 @@ public class Player : MonoBehaviour
             animator.SetTrigger("Jump");
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             isGrounded = false;
+            Debug.Log("UpArrow triggered");
         }
     }
 
@@ -61,6 +62,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+            Debug.Log("grounded = true");
         }
     }
 }
