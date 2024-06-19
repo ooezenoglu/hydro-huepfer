@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
         // Sprungaktion hinzufügen
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
         {
-            animator.SetTrigger("Jump");
+            animator.SetTrigger("JumpRight");
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             isGrounded = false;
         }
