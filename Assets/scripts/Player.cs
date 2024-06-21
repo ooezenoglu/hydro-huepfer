@@ -7,9 +7,13 @@ public class Player : MonoBehaviour
     private Animator animator;
     private Rigidbody2D rb;
     private bool isGrounded;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask whatIsGround;
+    [SerializeField] private float groundCheckRadius;
 
     public float moveSpeed = 5f; // Geschwindigkeit der Bewegung
     public float jumpForce = 0.1f; // Sprungkraft
+    public static bool PlayerIsAlive = true;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +26,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckifGrounded();
         // Bewegung in horizontaler Richtung basierend auf der Pfeiltaste
         float moveHorizontal = 0f;
 
@@ -56,11 +61,15 @@ public class Player : MonoBehaviour
     }
 
     // Überprüfung auf Bodenberührung
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void CheckifGrounded()
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (groundCheck == null) return;
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
 }

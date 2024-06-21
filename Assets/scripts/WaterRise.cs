@@ -10,7 +10,7 @@ public class WaterRise : MonoBehaviour
     private float _baseSpeed;
     private float _distance;
     private GameObject _player;
-    private bool _playerAlive = true;
+    
 
     private void Start()
     {
@@ -21,7 +21,7 @@ public class WaterRise : MonoBehaviour
 
     private void Update()
     {
-        if (!_playerAlive) return;
+        if (!Player.PlayerIsAlive) return;
         //TODO: after first jump -> boolean
         transform.Translate(Vector3.up * (speed * Time.deltaTime));
 
@@ -46,13 +46,10 @@ public class WaterRise : MonoBehaviour
 
     private void KillPlayer()
     {
-       
-
         if (_player.transform.position.y <= transform.position.y)
         {
             UnityEngine.Object.Destroy(_player);
-            _playerAlive = false;
-        }
-        
+            Player.PlayerIsAlive = false;
+        } 
     }
 }

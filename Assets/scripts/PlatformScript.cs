@@ -7,6 +7,7 @@ public class LevelScript : MonoBehaviour
     public int destructionDistance = 20;
     public GameObject player;
     public float playerPos;
+    
 
 
     // Start is called before the first frame update
@@ -20,6 +21,7 @@ public class LevelScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!Player.PlayerIsAlive) return;
         playerPos = player.transform.position.y;
         if (playerPos - destructionDistance > transform.position.y)
         {

@@ -30,6 +30,7 @@ public class PlatformSpawnerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!Player.PlayerIsAlive) return;
         PlayerPos = player.transform.position.y;
         var distanceFromNextPlatform = lastSpawnPositionY - PlayerPos;
 
