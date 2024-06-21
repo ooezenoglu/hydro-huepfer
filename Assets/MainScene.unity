@@ -1093,7 +1093,7 @@ MonoBehaviour:
     m_Bits: 128
   groundCheckRadius: 0.25
   moveSpeed: 5
-  jumpForce: 10
+  jumpForce: 12
 --- !u!95 &1217685509
 Animator:
   serializedVersion: 5
@@ -1781,7 +1781,7 @@ GameObject:
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1777337533
 MonoBehaviour:
   m_ObjectHideFlags: 0
