@@ -8,7 +8,7 @@ public class VerticalBackgroundScroller : MonoBehaviour
 
 	}
 
-	void FixedUpdate() {
+	void Update() {
 		Vector3 targetPos = new Vector3(target.position.x, target.position.y, transform.position.z);
 
 		transform.position = targetPos;
