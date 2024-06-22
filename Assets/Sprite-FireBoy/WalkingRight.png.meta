@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,10 +100,10 @@ TextureImporter:
       name: WalkingRight_0
       rect:
         serializedVersion: 2
-        x: 191
-        y: 50
-        width: 401
-        height: 704
+        x: 0
+        y: 0
+        width: 768
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,10 +121,10 @@ TextureImporter:
       name: WalkingRight_2
       rect:
         serializedVersion: 2
-        x: 977
-        y: 50
-        width: 359
-        height: 701
+        x: 1536
+        y: 0
+        width: 768
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,10 +142,10 @@ TextureImporter:
       name: WalkingRight_4
       rect:
         serializedVersion: 2
-        x: 1764
-        y: 53
-        width: 295
-        height: 698
+        x: 3072
+        y: 0
+        width: 768
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,10 +163,10 @@ TextureImporter:
       name: WalkingRight_6
       rect:
         serializedVersion: 2
-        x: 2529
-        y: 47
-        width: 316
-        height: 704
+        x: 4608
+        y: 0
+        width: 768
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,13 +181,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkingRight_8
+      name: WalkingRight_1
       rect:
         serializedVersion: 2
-        x: 3263
-        y: 50
-        width: 383
-        height: 701
+        x: 768
+        y: 0
+        width: 768
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed6dfee1cc1bc5748b34e09d19cff3a5
-      internalID: 1426986723
+      spriteID: 774b5bed026778b4aa308ac83b487fa0
+      internalID: 838770630
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkingRight_10
+      name: WalkingRight_3
       rect:
         serializedVersion: 2
-        x: 4040
-        y: 50
-        width: 368
-        height: 701
+        x: 2304
+        y: 0
+        width: 768
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a777c19e9e039248a8308b4ccf50a84
-      internalID: 2086502266
+      spriteID: 967a8c51784cb904d80f88182817fe96
+      internalID: -434659966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkingRight_12
+      name: WalkingRight_5
       rect:
         serializedVersion: 2
-        x: 4833
-        y: 56
-        width: 298
-        height: 695
+        x: 3840
+        y: 0
+        width: 768
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 309ca4a21f2f74047becfafddf591564
-      internalID: 1435184808
+      spriteID: 652f4fce214bb4344897126278a5fdb0
+      internalID: 476956746
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkingRight_14
+      name: WalkingRight_7
       rect:
         serializedVersion: 2
-        x: 5604
-        y: 47
-        width: 322
-        height: 704
+        x: 5376
+        y: 0
+        width: 768
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,8 +258,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 857346722f280244792fb498e754cfb3
-      internalID: 1352446319
+      spriteID: 8e88775b459e6134e97d85f8c798afe9
+      internalID: -1076428744
       vertices: []
       indices: 
       edges: []
@@ -277,34 +277,12 @@ TextureImporter:
     nameFileIdTable:
       WalkingRight_0: 205806739
       WalkingRight_1: 838770630
-      WalkingRight_10: 2086502266
-      WalkingRight_11: 450495298
-      WalkingRight_12: 1435184808
-      WalkingRight_13: 1930937904
-      WalkingRight_14: 1352446319
-      WalkingRight_15: 637911013
-      WalkingRight_16: 1921875310
-      WalkingRight_17: -2048622403
-      WalkingRight_18: 1217258125
-      WalkingRight_19: -1757343058
       WalkingRight_2: 830957658
-      WalkingRight_20: -1447208343
-      WalkingRight_21: -874823698
-      WalkingRight_22: -2127588558
-      WalkingRight_23: -1988578872
-      WalkingRight_24: 896544111
-      WalkingRight_25: 1174594707
-      WalkingRight_26: -413111276
-      WalkingRight_27: 442925334
-      WalkingRight_28: 1270216577
-      WalkingRight_29: -315145258
       WalkingRight_3: -434659966
       WalkingRight_4: 2099985918
       WalkingRight_5: 476956746
       WalkingRight_6: 141080973
       WalkingRight_7: -1076428744
-      WalkingRight_8: 1426986723
-      WalkingRight_9: 186907775
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

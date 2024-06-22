@@ -6,58 +6,88 @@ public class Player : MonoBehaviour
 {
     private Animator animator;
     private Rigidbody2D rb;
-    private bool isGrounded;
+    [SerializeField] private bool isGrounded;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private float groundCheckRadius;
 
     public float moveSpeed = 5f; // Geschwindigkeit der Bewegung
-    public float jumpForce = 0.1f; // Sprungkraft
+    public float jumpForce = 12f; // Sprungkraft
     public static bool PlayerIsAlive = true;
+    private bool _isFacingRight = true;
+    private float _moveInput;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        isGrounded = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         CheckifGrounded();
-        // Bewegung in horizontaler Richtung basierend auf der Pfeiltaste
-        float moveHorizontal = 0f;
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        Walk();
+
+        Jump();
+
+        ManageAnimations();
+    }
+
+    private void Walk()
+    {
+        _moveInput = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(_moveInput * moveSpeed, rb.velocity.y);
+
+        switch (_isFacingRight)
         {
-            animator.SetTrigger("WalkLeft");
-            moveHorizontal = -1f; // Bewegung nach links
+            case false when _moveInput > 0:
+            case true when _moveInput < 0:
+                Flip(); 
+                break;
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+    }
+
+    private void Jump()
+    {
+        if (!isGrounded) return; 
+
+        if (Input.GetButtonDown("Jump"))
         {
-            animator.SetTrigger("WalkRight");
-            moveHorizontal = 1f; // Bewegung nach rechts
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+    }
+
+    private void ManageAnimations()
+    {
+        if (rb.velocity.x != 0 && isGrounded)
+        {
+            animator.SetBool("Walking", true);
+            animator.SetBool("Standing", false);
+            animator.SetBool("Jumping", false);
+        }
+        else if (!isGrounded)
+        {
+            animator.SetBool("Jumping", true);
+            animator.SetBool("Standing", false);
+            animator.SetBool("Walking", false);
         }
         else
         {
-            animator.SetTrigger("Stand"); // Standbild setzen, wenn keine Pfeiltasten gedrückt werden
+            animator.SetBool("Standing", true);
+            animator.SetBool("Jumping", false);
+            animator.SetBool("Walking", false);
         }
+    }
 
-        // Berechnung der Bewegung basierend auf der Tasteneingabe
-        Vector3 movement = new Vector3(moveHorizontal, 0f, 0f) * moveSpeed * Time.deltaTime;
-
-        // Bewegung anwenden
-        transform.Translate(movement);
-
-        // Sprungaktion hinzufügen
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
-        {
-            animator.SetTrigger("JumpRight");
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-            isGrounded = false;
-        }
+    private void Flip()
+    {
+        _isFacingRight = !_isFacingRight;
+        Vector3 scaler = transform.localScale;
+        scaler.x *= -1;
+        transform.localScale = scaler;
     }
 
     // Überprüfung auf Bodenberührung

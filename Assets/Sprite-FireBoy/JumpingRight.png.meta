@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,12 +100,12 @@ TextureImporter:
       name: JumpingRight_0
       rect:
         serializedVersion: 2
-        x: 230
-        y: 48
-        width: 316
-        height: 660
+        x: 0
+        y: 0
+        width: 768
+        height: 768
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -121,12 +121,12 @@ TextureImporter:
       name: JumpingRight_1
       rect:
         serializedVersion: 2
-        x: 1051
-        y: 48
-        width: 300
-        height: 720
+        x: 768
+        y: 0
+        width: 768
+        height: 768
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -142,12 +142,12 @@ TextureImporter:
       name: JumpingRight_2
       rect:
         serializedVersion: 2
-        x: 1820
-        y: 115
-        width: 300
-        height: 652
+        x: 1536
+        y: 0
+        width: 768
+        height: 768
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -163,12 +163,12 @@ TextureImporter:
       name: JumpingRight_3
       rect:
         serializedVersion: 2
-        x: 2547
-        y: 48
-        width: 328
-        height: 716
+        x: 2304
+        y: 0
+        width: 768
+        height: 768
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,22 +181,22 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JumpingRight_5
+      name: JumpingRight_4
       rect:
         serializedVersion: 2
-        x: 3303
-        y: 48
-        width: 313
-        height: 659
+        x: 3072
+        y: 0
+        width: 768
+        height: 768
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9547f04a42d14346acd4cc799b2a25e
-      internalID: 254897435
+      spriteID: f75d183fb26af9e47a12459c285a79cf
+      internalID: 117201419
       vertices: []
       indices: 
       edges: []
@@ -214,43 +214,9 @@ TextureImporter:
     nameFileIdTable:
       JumpingRight_0: 362162364
       JumpingRight_1: 285121723
-      JumpingRight_10: -1775473535
-      JumpingRight_11: 1659190837
-      JumpingRight_12: 1538992478
-      JumpingRight_13: -1092492005
-      JumpingRight_14: 1594635129
-      JumpingRight_15: -1083804450
-      JumpingRight_16: 1249440620
-      JumpingRight_17: 84470285
-      JumpingRight_18: 361444902
-      JumpingRight_19: -598111908
       JumpingRight_2: -2065016701
-      JumpingRight_20: 798466917
-      JumpingRight_21: 445604896
-      JumpingRight_22: 2063382157
-      JumpingRight_23: 124776944
-      JumpingRight_24: 618399141
-      JumpingRight_25: -66471233
-      JumpingRight_26: 107767290
-      JumpingRight_27: 1450557996
-      JumpingRight_28: -330570442
-      JumpingRight_29: 524651999
       JumpingRight_3: 547249834
-      JumpingRight_30: 780507692
-      JumpingRight_31: -889486661
-      JumpingRight_32: 512689376
-      JumpingRight_33: 541564448
-      JumpingRight_34: 165474205
-      JumpingRight_35: 1330666292
-      JumpingRight_36: 742911912
-      JumpingRight_37: -817583858
-      JumpingRight_38: -99075833
       JumpingRight_4: 117201419
-      JumpingRight_5: 254897435
-      JumpingRight_6: -2105642938
-      JumpingRight_7: -959688603
-      JumpingRight_8: -1686620206
-      JumpingRight_9: 1463666531
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
