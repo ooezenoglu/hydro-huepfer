@@ -17,11 +17,16 @@ public class Player : MonoBehaviour
     private bool _isFacingRight = true;
     private float _moveInput;
 
+    // Audio
+    private AudioSource audioSource;
+    public AudioClip jumpSound;
+
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -52,11 +57,13 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
+
         if (!isGrounded) return; 
 
         if (Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            audioSource.PlayOneShot(jumpSound);
         }
     }
 
