@@ -9,6 +9,7 @@ public class VerticalBackgroundScroller : MonoBehaviour
 	}
 
 	void Update() {
+		if (!Player.PlayerIsAlive) return;
 		Vector3 targetPos = new Vector3(target.position.x, target.position.y, transform.position.z);
 
 		transform.position = targetPos;
