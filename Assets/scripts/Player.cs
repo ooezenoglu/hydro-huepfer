@@ -21,6 +21,10 @@ public class Player : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip jumpSound;
 
+    //Lader
+    private float speed = 5f;
+    private bool isClimbing = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,7 +62,7 @@ public class Player : MonoBehaviour
     private void Jump()
     {
 
-        if (!isGrounded) return; 
+        if (!isGrounded)  return;
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -109,4 +113,32 @@ public class Player : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Ladder"))
+        {
+            if (rb.velocity.y > 0 && !isClimbing)
+            {
+                Debug.Log("JUMPING");
+                return;
+            }
+            else if (Input.GetKey(KeyCode.W))
+            {
+                rb.velocity = new Vector2(0, speed);
+                isClimbing = true;
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+               rb.velocity = new Vector2(0, -speed);
+                isClimbing = true;
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, 0);
+                isClimbing = false;
+            }
+        }
+    }
+
 }
