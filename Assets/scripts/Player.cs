@@ -123,12 +123,12 @@ public class Player : MonoBehaviour
                 Debug.Log("JUMPING");
                 return;
             }
-            else if (Input.GetKey(KeyCode.W))
+            else if (Input.GetKey(KeyCode.UpArrow))
             {
                 rb.velocity = new Vector2(0, speed);
                 isClimbing = true;
             }
-            else if (Input.GetKey(KeyCode.S))
+            else if (Input.GetKey(KeyCode.DownArrow))
             {
                rb.velocity = new Vector2(0, -speed);
                 isClimbing = true;
