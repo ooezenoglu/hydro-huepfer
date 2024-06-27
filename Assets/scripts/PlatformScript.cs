@@ -6,7 +6,7 @@ public class LevelScript : MonoBehaviour
 {
     public int destructionDistance = 20;
     public GameObject player;
-    public float playerPos;
+    private float playerPos;
     
 
 

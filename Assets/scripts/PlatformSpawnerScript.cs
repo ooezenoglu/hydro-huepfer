@@ -36,6 +36,7 @@ public class PlatformSpawnerScript : MonoBehaviour
 
         if(distanceFromNextPlatform < 15)
         {
+            xOffset = Random.Range(-10, 10);
             GeneratePlatform(xOffset, lastSpawnPositionY + platformDistance);
             lastSpawnPositionY += platformDistance;
         }
