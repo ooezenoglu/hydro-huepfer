@@ -20,6 +20,9 @@ public class Player : MonoBehaviour
     // Audio
     private AudioSource audioSource;
     public AudioClip jumpSound;
+    public AudioClip thumpSound;
+
+    private bool wasGrounded;
 
     // Start is called before the first frame update
     void Start()
@@ -97,10 +100,15 @@ public class Player : MonoBehaviour
         transform.localScale = scaler;
     }
 
-    // Überprüfung auf Bodenberührung
     private void CheckifGrounded()
     {
+        bool previouslyGrounded = isGrounded;
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+
+        if (!previouslyGrounded && isGrounded)
+        {
+            audioSource.PlayOneShot(thumpSound);
+        }
     }
 
     private void OnDrawGizmosSelected()
