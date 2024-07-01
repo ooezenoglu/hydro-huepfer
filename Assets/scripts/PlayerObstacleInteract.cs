@@ -8,6 +8,13 @@ public class PlayerObstacleInteract : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Spike") || collision.gameObject.CompareTag("Puddle"))
         {
+            AudioSource audioSource = collision.gameObject.GetComponent<AudioSource>();
+
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
+
             Player.PlayerIsAlive = false;
             Destroy(gameObject);
         }
