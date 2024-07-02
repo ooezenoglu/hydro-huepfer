@@ -118,11 +118,8 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ladder"))
         {
-            if (rb.velocity.y > 0 && !isClimbing)
-            {
-                Debug.Log("JUMPING");
-                return;
-            }
+            if (rb.velocity.y > 0 && !isClimbing) return;
+
             else if (Input.GetKey(KeyCode.UpArrow))
             {
                 rb.velocity = new Vector2(0, speed);

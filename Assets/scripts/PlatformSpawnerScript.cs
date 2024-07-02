@@ -9,8 +9,10 @@ public class PlatformSpawnerScript : MonoBehaviour
     private GameObject player;
 
     private int lastSpawnPositionY = 0;
+    private int lastSpawnPositionX = 0;
     public int platformDistance = 20;
     public int xOffset = 0;
+    private int[] offsets = {-20, 20};
 
     //ladder activated maybe?
     bool needToGenerate = false;
@@ -24,6 +26,7 @@ public class PlatformSpawnerScript : MonoBehaviour
         PlayerPos = player.transform.position.y;
         Instantiate(platform, new Vector3(0, 20, 0), Quaternion.identity);
         lastSpawnPositionY = 20;
+        lastSpawnPositionX = 0;
 
     }
 
@@ -36,9 +39,10 @@ public class PlatformSpawnerScript : MonoBehaviour
 
         if(distanceFromNextPlatform < 15)
         {
-            xOffset = Random.Range(-10, 10);
-            GeneratePlatform(xOffset, lastSpawnPositionY + platformDistance);
+            xOffset = offsets[Random.Range(0, offsets.Length)];
+            GeneratePlatform(lastSpawnPositionX + xOffset, lastSpawnPositionY + platformDistance);
             lastSpawnPositionY += platformDistance;
+            lastSpawnPositionX += xOffset;
         }
 
        

@@ -11,22 +11,13 @@ public class LevelTriggerScript : MonoBehaviour
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
-        Debug.Log("found logic");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("trigger");
-        //logic.addScore(1);
-
-        
-        if (collision.gameObject.layer == 6 && !wasTriggered)
+        if (wasTriggered) return;
+        else if (collision.gameObject.layer == 6)
         {
             logic.addScore(1);
             wasTriggered = true;

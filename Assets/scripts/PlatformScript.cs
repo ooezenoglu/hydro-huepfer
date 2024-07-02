@@ -25,7 +25,6 @@ public class LevelScript : MonoBehaviour
         playerPos = player.transform.position.y;
         if (playerPos - destructionDistance > transform.position.y)
         {
-            Debug.Log("platform deleted");
             Object.Destroy(gameObject);
         }
     }
