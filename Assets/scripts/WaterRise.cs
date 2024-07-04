@@ -55,9 +55,9 @@ public class WaterRise : MonoBehaviour
         if (_player.transform.position.y <= transform.position.y)
         {
             audioSource.PlayOneShot(whooshSound);
-            UnityEngine.Object.Destroy(_player);
-            Player.PlayerIsAlive = false;
             GameController.GameOver();
+            Player.PlayerIsAlive = false;
+            //UnityEngine.Object.Destroy(_player);
         } 
     }
 }

@@ -2266,7 +2266,7 @@ GameObject:
   - component: {fileID: 1217685515}
   - component: {fileID: 1217685516}
   - component: {fileID: 1217685517}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3546,7 +3546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 2122484655}
 --- !u!4 &1470084349
 Transform:
   m_ObjectHideFlags: 0

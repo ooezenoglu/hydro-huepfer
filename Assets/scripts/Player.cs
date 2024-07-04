@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
+        PlayerIsAlive = true;
     }
 
     // Update is called once per frame
@@ -144,6 +145,15 @@ public class Player : MonoBehaviour
                 isClimbing = false;
             }
         }
+    }
+
+    public void Die()
+    {
+        transform.position = transform.position + new Vector3(-7, -2, 0);
+        rb.velocity = new Vector2(0,0);
+
+
+
     }
 
 }

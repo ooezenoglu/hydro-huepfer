@@ -18,7 +18,7 @@ public class PlayerObstacleInteract : MonoBehaviour
             }
 
             Player.PlayerIsAlive = false;
-            Destroy(gameObject);
+            //Destroy(gameObject);
             GameController.GameOver();
         }
     }
