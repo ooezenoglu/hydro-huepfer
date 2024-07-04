@@ -4,18 +4,18 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Logic
   - Ground
-  - Ladder
+  - Spike
+  - Puddle
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - 
   - Water
   - UI
-  - Player
   - 
+  - Ground
   - 
   - 
   - 

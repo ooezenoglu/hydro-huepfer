@@ -10,13 +10,17 @@ public class WaterRise : MonoBehaviour
     private float _baseSpeed;
     private float _distance;
     private GameObject _player;
-    
+
+    // Audio
+    private AudioSource audioSource;
+    public AudioClip whooshSound;
 
     private void Start()
     {
         _cam = Camera.main;
         _player = GameObject.FindGameObjectWithTag("Player");
         _baseSpeed = speed;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -48,6 +52,7 @@ public class WaterRise : MonoBehaviour
     {
         if (_player.transform.position.y <= transform.position.y)
         {
+            audioSource.PlayOneShot(whooshSound);
             UnityEngine.Object.Destroy(_player);
             Player.PlayerIsAlive = false;
         } 
