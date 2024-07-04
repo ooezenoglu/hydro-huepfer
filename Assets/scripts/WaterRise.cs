@@ -15,6 +15,8 @@ public class WaterRise : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip whooshSound;
 
+    public GameController GameController;
+
     private void Start()
     {
         _cam = Camera.main;
@@ -55,6 +57,7 @@ public class WaterRise : MonoBehaviour
             audioSource.PlayOneShot(whooshSound);
             UnityEngine.Object.Destroy(_player);
             Player.PlayerIsAlive = false;
+            GameController.GameOver();
         } 
     }
 }
