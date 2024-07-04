@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerObstacleInteract : MonoBehaviour
 {
+    public GameController GameController;
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Spike") || collision.gameObject.CompareTag("Puddle"))
@@ -17,6 +19,7 @@ public class PlayerObstacleInteract : MonoBehaviour
 
             Player.PlayerIsAlive = false;
             Destroy(gameObject);
+            GameController.GameOver();
         }
     }
 }
