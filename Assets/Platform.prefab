@@ -12,7 +12,13 @@ GameObject:
   - component: {fileID: 2433594535280808955}
   - component: {fileID: 7197820232429901460}
   - component: {fileID: 5883054338032445721}
+<<<<<<< HEAD
   m_Layer: 7
+=======
+  - component: {fileID: 5576803296556684605}
+  - component: {fileID: 4229223543831608124}
+  m_Layer: 3
+>>>>>>> parent of d9ceb06 (merged main into IB)
   m_Name: LevelLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,7 +515,13 @@ GameObject:
   - component: {fileID: 5161943356629056003}
   - component: {fileID: 3814815244072275614}
   - component: {fileID: 173143167016359806}
+<<<<<<< HEAD
   m_Layer: 7
+=======
+  - component: {fileID: 1589042840561778101}
+  - component: {fileID: 1571649612493899112}
+  m_Layer: 3
+>>>>>>> parent of d9ceb06 (merged main into IB)
   m_Name: LevelRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
