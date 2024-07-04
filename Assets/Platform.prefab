@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5883054338032445721}
   - component: {fileID: 5576803296556684605}
   - component: {fileID: 4229223543831608124}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: LevelLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1254,7 +1254,7 @@ GameObject:
   - component: {fileID: 173143167016359806}
   - component: {fileID: 1589042840561778101}
   - component: {fileID: 1571649612493899112}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: LevelRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2624,7 +2624,7 @@ GameObject:
   - component: {fileID: 3534475264178128123}
   - component: {fileID: 6535904196435982417}
   - component: {fileID: 4324360870803432939}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
