@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour
 {
     public AudioSource backgroundMusic;
     public GameOverScreen gameOverScreen;
-    int nLevels = 0;
+    public LogicScript levels;
 
     public AudioClip audioClipBackground;
 
@@ -20,6 +20,6 @@ public class GameController : MonoBehaviour
         }
 
         // display game over screen
-        gameOverScreen.Setup(nLevels);
+        gameOverScreen.Setup(levels.score);
     }
 }
