@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.XR;
 
 public class PlatformSpawnerScript : MonoBehaviour
 {
@@ -21,8 +22,9 @@ public class PlatformSpawnerScript : MonoBehaviour
     //Jump and Run
     [SerializeField] private GameObject[] blocks;
     public int mirrorOffset = 6;
-    private int[] weirdYoffsets = {1, -14, 1, 1};
-    private int[] weirdXoffsets = { -3, 2, -3, -3};
+    private int[] weirdYoffsets = { 8, -7, 8, 8, -10 };
+    private int[] weirdXoffsets = { -3, 2, -3, -3, -1};
+    private int platformWidth = 14;
 
 
     // Start is called before the first frame update
@@ -63,27 +65,38 @@ public class PlatformSpawnerScript : MonoBehaviour
 
     void GenerateJumpAndRun(float x, float y)
     {
-        var platformWidth = 13;
-        var yOffset = 7;
-        //var xOffset = 15;
+        var yOffset = 0;
 
         var x_temp = x;
         var x_temp_Mirror = x - mirrorOffset;
         while (x_temp < x + platformWidth)
         {
-            var rand = Random.Range(0, blocks.Length - 1);
+            var rand = Random.Range(0, blocks.Length);
             var block = blocks[rand];
+            var blockDistance = Random.Range(1, 1.7f);
             Instantiate(block, new Vector3(x_temp+ weirdXoffsets[rand], y + yOffset + weirdYoffsets[rand], 0), Quaternion.identity);
-            x_temp += block.transform.GetChild(0).GetComponent<Tilemap>().size.x + 1;
+            if(rand == 4) {
+                block.transform.GetChild(1).transform.position = new Vector3(x_temp + 1, y - 15);
+            }
+            x_temp += block.transform.GetChild(0).GetComponent<Tilemap>().size.x + blockDistance;
 
-
+            //mirror on the left
             x_temp_Mirror -= block.transform.GetChild(0).GetComponent<Tilemap>().size.x;
             Instantiate(block, new Vector3(x_temp_Mirror + weirdXoffsets[rand], y + yOffset + weirdYoffsets[rand], 0), Quaternion.identity);
-            x_temp_Mirror--;
+            if (rand == 4)
+            {
+                block.transform.GetChild(1).transform.position = new Vector3(x_temp_Mirror + 1, y - 15);
+            }
+            x_temp_Mirror -= blockDistance;
 
             yOffset += 2;
-
         }
+
+        var rand2 = Random.Range(0, blocks.Length);
+        yOffset -= 4;
+        Instantiate(blocks[rand2], new Vector3(x_temp + weirdXoffsets[rand2], y + yOffset + weirdYoffsets[rand2], 0), Quaternion.identity);
+        x_temp_Mirror -= blocks[rand2].transform.GetChild(0).GetComponent<Tilemap>().size.x;
+        Instantiate(blocks[rand2], new Vector3(x_temp_Mirror + weirdXoffsets[rand2], y + yOffset + weirdYoffsets[rand2], 0), Quaternion.identity);
 
     }
 }
