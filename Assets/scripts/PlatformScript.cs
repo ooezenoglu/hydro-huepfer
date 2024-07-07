@@ -7,8 +7,8 @@ public class LevelScript : MonoBehaviour
     public int destructionDistance = 20;
     public GameObject player;
     private float playerPos;
-    
 
+    
 
     // Start is called before the first frame update
     void Start()
@@ -28,4 +28,5 @@ public class LevelScript : MonoBehaviour
             Object.Destroy(gameObject);
         }
     }
+
 }
