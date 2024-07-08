@@ -9,6 +9,7 @@ TagManager:
   - Puddle
   - Logic
   - Ladder
+  - Monster
   layers:
   - Default
   - TransparentFX
