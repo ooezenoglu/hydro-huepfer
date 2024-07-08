@@ -6314,7 +6314,6 @@ MonoBehaviour:
   - {fileID: 2956640183899133285, guid: 66baf167a522ccf43bf572fb9f46de45, type: 3}
   - {fileID: 2835575800793315243, guid: 9ad778e98ae64cb4eb42f7c55dbd5239, type: 3}
   mirrorOffset: 6
-  spike: {fileID: 6202311362142983486, guid: b680838b3492dd043829d1bf25a9a748, type: 3}
 --- !u!4 &1890275061
 Transform:
   m_ObjectHideFlags: 0
@@ -9212,11 +9211,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2835575800793315243, guid: 9ad778e98ae64cb4eb42f7c55dbd5239, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4351358817326710150, guid: 9ad778e98ae64cb4eb42f7c55dbd5239, type: 3}
       propertyPath: m_ColliderPaths.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4592367560788280633, guid: 9ad778e98ae64cb4eb42f7c55dbd5239, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9257,6 +9256,14 @@ PrefabInstance:
     - target: {fileID: 4592367560788280633, guid: 9ad778e98ae64cb4eb42f7c55dbd5239, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704084407780167317, guid: 9ad778e98ae64cb4eb42f7c55dbd5239, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704084407780167317, guid: 9ad778e98ae64cb4eb42f7c55dbd5239, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 80.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
