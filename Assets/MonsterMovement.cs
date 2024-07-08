@@ -37,7 +37,7 @@ public class MonsterMovement : MonoBehaviour
         Vector2 movement = new Vector2(speed , rb.velocity.y);
         rb.velocity = MoveRight ? movement : new Vector2(-movement.x, movement.y);
 
-        animator.SetBool("MoveRight", MoveRight);
+        /*animator.SetBool("MoveRight", MoveRight);*/
     }
 
     void CheckStuck()
@@ -68,5 +68,6 @@ public class MonsterMovement : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+        animator.SetBool("MoveRight", MoveRight);
     }
 }
