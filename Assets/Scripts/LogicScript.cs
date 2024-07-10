@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class LogicScript : MonoBehaviour
 {
-    public int score;
+    public int score = 0;
     public Text scoreText;
 
     [ContextMenu("Increase Score")]
