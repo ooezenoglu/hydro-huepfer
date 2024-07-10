@@ -2622,7 +2622,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5724897564746417031}
   - component: {fileID: 8313067563218543149}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Monster Collider right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2699,7 +2699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3579467974691930006}
   - component: {fileID: 1511395090367757783}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Monster Collider left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
