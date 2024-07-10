@@ -25,6 +25,7 @@ public class PlatformSpawnerScript : MonoBehaviour
     private int[] weirdYoffsets = { 8, -7, 8, 8, -10 };
     private int[] weirdXoffsets = { -3, 2, -3, -3, -1};
     private int platformWidth = 14;
+    public GameObject monsterPrefab; // Das Prefab des Wassermonsters
 
 
     // Start is called before the first frame update
@@ -49,6 +50,9 @@ public class PlatformSpawnerScript : MonoBehaviour
             xOffset = offsets[Random.Range(0, offsets.Length)];
             GeneratePlatform(lastSpawnPositionX + xOffset, lastSpawnPositionY + platformDistance);
             GenerateJumpAndRun(lastSpawnPositionX + xOffset, lastSpawnPositionY + platformDistance);
+
+            // Erzeuge das Monster
+            GenerateMonster(lastSpawnPositionX + xOffset, lastSpawnPositionY + platformDistance);
 
             lastSpawnPositionY += platformDistance;
             lastSpawnPositionX += xOffset;
@@ -98,5 +102,11 @@ public class PlatformSpawnerScript : MonoBehaviour
         x_temp_Mirror -= blocks[rand2].transform.GetChild(0).GetComponent<Tilemap>().size.x;
         Instantiate(blocks[rand2], new Vector3(x_temp_Mirror + weirdXoffsets[rand2], y + yOffset + weirdYoffsets[rand2], 0), Quaternion.identity);
 
+    }
+
+    void GenerateMonster(float x, float y)
+    {
+        Vector3 spawnPosition = new Vector3(x, y, 0); // Annahme: z=0 für 2D-Spiel, passe den Wert für 3D-Spiele an
+        Instantiate(monsterPrefab, spawnPosition, Quaternion.identity);
     }
 }
