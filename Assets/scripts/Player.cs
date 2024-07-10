@@ -130,7 +130,7 @@ public class Player : MonoBehaviour
         {
             if (rb.velocity.y > 0 && !isClimbing) return;
 
-            else if (Input.GetKey(KeyCode.UpArrow))
+            else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
             {
                 rb.velocity = new Vector2(0, speed);
                 isClimbing = true;
