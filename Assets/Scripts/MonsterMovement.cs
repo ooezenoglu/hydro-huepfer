@@ -68,6 +68,12 @@ public class MonsterMovement : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
-        animator.SetBool("MoveRight", MoveRight);
+        if (scale.x >= 0)
+        {
+            animator.SetBool("MoveRight", true);
+        }
+        else {
+            animator.SetBool("MoveRight", false);
+        }
     }
 }
