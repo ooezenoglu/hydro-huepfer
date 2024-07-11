@@ -35,19 +35,15 @@ public class WavesParallax : MonoBehaviour
         foreach (var sprite in waves)
         {
             sprite.transform.position += new Vector3(speed * Time.deltaTime, _verticalOffset * Time.deltaTime, 0);
-            if (speed > 0)
+
+            if (sprite.transform.position.x > _player.position.x - _spriteWidth * (waves.Length-1)/2)
             {
-                if (sprite.transform.position.x > _player.position.x+(_spriteWidth*(waves.Length-1)/2))
-                {
-                    RepositionSprite(sprite, -_spriteWidth * waves.Length);
-                }
+                RepositionSprite(sprite, -_spriteWidth * waves.Length);
             }
-            else
+
+            if (sprite.transform.position.x < _player.position.x - _spriteWidth * (waves.Length - 1)/2)
             {
-                if (sprite.transform.position.x < _player.position.x+(-_spriteWidth*(waves.Length-1)/2))
-                {
-                    RepositionSprite(sprite, _spriteWidth * waves.Length);
-                }
+                RepositionSprite(sprite, _spriteWidth * waves.Length);
             }
         }
     }
