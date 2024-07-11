@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class GameController : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class GameController : MonoBehaviour
 
     public AudioClip audioClipBackground;
 
+    public PlayableDirector deathClip;
+
+
     public void GameOver()
     {
         Time.timeScale = 0f; // stop the game
@@ -18,6 +22,14 @@ public class GameController : MonoBehaviour
         {
             backgroundMusic.Stop(); // stop the background music
         }
+
+        StartCoroutine(DeathSequence());
+    }
+
+    public IEnumerator DeathSequence()
+    {
+        deathClip.Play();
+        yield return new WaitForSecondsRealtime(3);
 
         // display game over screen
         gameOverScreen.Setup(levels.score);
