@@ -16,9 +16,10 @@ public class GameController : MonoBehaviour
         
         if (backgroundMusic.clip == audioClipBackground)
         {
-            backgroundMusic.Stop(); // stop the background music
+            backgroundMusic.Stop();
+            BackgroundMusic2.Instance.StopGrowling();
         }
-
+       
         // display game over screen
         gameOverScreen.Setup(levels.score);
     }
