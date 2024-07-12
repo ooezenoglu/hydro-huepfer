@@ -153,6 +153,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
+  attack: {fileID: 8300000, guid: 77905954e2abc324f8666941be4004dd, type: 3}
+  sizzle: {fileID: 8300000, guid: e9ebcc82a54ec984584fc4c82f522745, type: 3}
 --- !u!70 &6032175286681112987
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

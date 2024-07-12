@@ -16,11 +16,18 @@ public class MonsterMovement : MonoBehaviour
     private float stuckTime;
     private float stuckThreshold = 0.1f;
 
+    // Audio
+    public AudioClip attack;
+    public AudioClip sizzle;
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        BackgroundMusic2.Instance.StartGrowling();
 
         lastXPosition = transform.position.x;
     }
@@ -76,4 +83,14 @@ public class MonsterMovement : MonoBehaviour
             animator.SetBool("MoveRight", false);
         }
     }
+
+    public void PlayAttackSound()
+    {
+        if (audioSource != null && attack != null)
+        {
+            audioSource.PlayOneShot(attack);
+            audioSource.PlayOneShot(sizzle);
+        }
+    }
+
 }
