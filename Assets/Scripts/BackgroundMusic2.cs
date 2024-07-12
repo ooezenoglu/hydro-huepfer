@@ -23,17 +23,31 @@ public class BackgroundMusic2 : MonoBehaviour
         }
     }
 
-    public void StartGrowling()
+        private void Start()
     {
         audioSource = GetComponent<AudioSource>();
 
-        audioSource.clip = growl;
-        audioSource.loop = true;
-        audioSource.Play();
+        if (audioSource == null)
+        {
+            Debug.LogError("AudioSource component is missing from " + gameObject.name);
+        }
+    }
+
+    public void StartGrowling()
+    {
+        if (audioSource != null && growl != null)
+        {
+            audioSource.clip = growl;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
     }
 
     public void StopGrowling()
     {     
-        audioSource.Stop();
+        if (audioSource != null && audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
     }
 }

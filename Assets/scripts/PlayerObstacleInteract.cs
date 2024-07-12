@@ -5,10 +5,9 @@ using UnityEngine;
 public class PlayerObstacleInteract : MonoBehaviour
 {
     public GameController GameController;
-    public MonsterMovement MonsterMovement;
-    private Rigidbody2D rb;
     public float jumpForce = 12f;
 
+    private Rigidbody2D rb;
     private AudioSource audioSource;
     public AudioClip boingSound;
 
@@ -29,19 +28,25 @@ public class PlayerObstacleInteract : MonoBehaviour
                 if (contactPoint.normal.y > 0.5f && rb.velocity.y < 0)
                 {
                     audioSource.PlayOneShot(boingSound);
-                   
+
                     BackgroundMusic2.Instance.StopGrowling();
 
                     Destroy(collision.gameObject);
 
                     rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                    
+
                     return;
                 }
             }
 
-            MonsterMovement.PlayAttackSound();
-           // BackgroundMusic2.Instance.StopGrowling();
+            MonsterMovement monsterMovement = collision.gameObject.GetComponent<MonsterMovement>();
+
+            if (monsterMovement != null)
+            {
+                monsterMovement.PlayAttackSound();
+            }
+
+            BackgroundMusic2.Instance.StopGrowling();
             Player.PlayerIsAlive = false;
             GameController.GameOver();
         }
@@ -55,7 +60,7 @@ public class PlayerObstacleInteract : MonoBehaviour
             }
 
             Player.PlayerIsAlive = false;
-           // BackgroundMusic2.Instance.StopGrowling();
+            BackgroundMusic2.Instance.StopGrowling();
             Destroy(gameObject);
             GameController.GameOver();
         }

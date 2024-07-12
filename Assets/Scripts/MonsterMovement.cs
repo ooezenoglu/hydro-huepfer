@@ -17,34 +17,48 @@ public class MonsterMovement : MonoBehaviour
     private float stuckThreshold = 0.1f;
 
     // Audio
-    public AudioClip attack;
-    public AudioClip sizzle;
+    [SerializeField] private AudioClip attack;
+    [SerializeField] private AudioClip sizzle;
     private AudioSource audioSource;
+    private bool isVisible = false;
 
-    // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        BackgroundMusic2.Instance.StartGrowling();
+
+        audioSource = gameObject.AddComponent<AudioSource>();
+
+        if (attack == null || sizzle == null)
+        {
+            Debug.LogError("Attack or sizzle AudioClip is not assigned in " + gameObject.name);
+        }
 
         lastXPosition = transform.position.x;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move();
         CheckStuck();
     }
 
+    private void OnBecameVisible()
+    {
+        isVisible = true;
+        BackgroundMusic2.Instance.StartGrowling();
+    }
+
+    private void OnBecameInvisible()
+    {
+        isVisible = false;
+        BackgroundMusic2.Instance.StopGrowling();
+    }
+
     void Move()
     {
-        Vector2 movement = new Vector2(speed , rb.velocity.y);
+        Vector2 movement = new Vector2(speed, rb.velocity.y);
         rb.velocity = MoveRight ? movement : new Vector2(-movement.x, movement.y);
-
-        /*animator.SetBool("MoveRight", MoveRight);*/
     }
 
     void CheckStuck()
@@ -75,22 +89,15 @@ public class MonsterMovement : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
-        if (scale.x >= 0)
-        {
-            animator.SetBool("MoveRight", true);
-        }
-        else {
-            animator.SetBool("MoveRight", false);
-        }
+        animator.SetBool("MoveRight", scale.x >= 0);
     }
 
     public void PlayAttackSound()
     {
-        if (audioSource != null && attack != null)
+        if (audioSource != null)
         {
             audioSource.PlayOneShot(attack);
             audioSource.PlayOneShot(sizzle);
         }
     }
-
 }
