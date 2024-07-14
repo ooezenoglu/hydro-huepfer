@@ -10,8 +10,8 @@ public class PlatformSpawnerScript : MonoBehaviour
     private int platformHight;
     private GameObject player;
 
-    private int lastSpawnPositionY = 0;
-    private int lastSpawnPositionX = 0;
+    private int lastSpawnPositionY;
+    private int lastSpawnPositionX;
     public int platformDistance = 15;
     public int xOffset = 0;
     private int[] offsets = {-20, 20};
