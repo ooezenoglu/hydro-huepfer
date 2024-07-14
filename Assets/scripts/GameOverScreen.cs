@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
+// unwichtig
 public class GameOverScreen : MonoBehaviour
 {
     public Text pointsText;
