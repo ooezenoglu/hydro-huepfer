@@ -61,7 +61,7 @@ public class PlayerObstacleInteract : MonoBehaviour
 
             Player.PlayerIsAlive = false;
             BackgroundMusic2.Instance.StopGrowling();
-            Destroy(gameObject);
+            //Destroy(gameObject);
             GameController.GameOver();
         }
     }

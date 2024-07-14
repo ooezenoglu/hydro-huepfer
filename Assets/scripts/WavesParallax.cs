@@ -32,6 +32,8 @@ public class WavesParallax : MonoBehaviour
 
     private void MoveSprites()
     {
+
+        if (_player == null) return;
         foreach (var sprite in waves)
         {
             sprite.transform.position += new Vector3(speed * Time.deltaTime, _verticalOffset * Time.deltaTime, 0);
