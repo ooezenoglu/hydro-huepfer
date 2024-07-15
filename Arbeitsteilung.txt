@@ -22,4 +22,11 @@ Hasan Camci:
 - Animationen des Players erstellt 
 - Animation der Wassermonster erstellt und implementiert
 
+Özge Özenoglu:
+- Hintergrundbild- und musik
+- Pfützen und Spike Sprites + Animation und Interaktion mit Spieler
+- Verschiedene Soundeffects für Spieler/Wassermonster/Hindernisse 
+  + Logik für das An- und Abschalten von Soundeffects
+- Game Over Screen
+
 
