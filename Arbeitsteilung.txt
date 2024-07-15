@@ -1,0 +1,3 @@
+Eine kurze Datei Arbeitsteilung.txt in der beschrieben ist ob und wie Sie die Arbeit am
+Projekt aufgeteilt haben und wer was gemacht hat (grob!! Es ist keine Aufschlüsselung
+nach Code-Zeile nötig).
