@@ -5226,7 +5226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39b90cb893490ee48a5330f9af8b6029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.3
+  speed: 0.1
   boostDistance: 50
   boostTime: 15
   whooshSound: {fileID: 8300000, guid: 2ec34c95962f8ed4ea33ba060129ef75, type: 3}
