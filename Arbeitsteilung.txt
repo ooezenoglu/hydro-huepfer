@@ -1,3 +1,13 @@
 Eine kurze Datei Arbeitsteilung.txt in der beschrieben ist ob und wie Sie die Arbeit am
 Projekt aufgeteilt haben und wer was gemacht hat (grob!! Es ist keine Aufschlüsselung
 nach Code-Zeile nötig).
+
+
+Isabel Bady:
+- Platformen + Tileset erstellung
+- automatisches spawnen (+ despawnen) der Platformen
+- Leitern + Leiterbewegung des Players
+- Score Anzeige (während Spiel läuft)
+ + hochzählen bei betreten neuer Platform
+
+
