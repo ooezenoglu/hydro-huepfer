@@ -10,4 +10,11 @@ Isabel Bady:
 - Score Anzeige (während Spiel läuft)
  + hochzählen bei betreten neuer Platform
 
+Franziska Augustinowski:
+- Sprite Sheets erstellt
+	Player: laufen nach links und rechts, sterben, springen etc
+	Wassermonster: laufen links und rechts
+- am Anfang mit den Animationen des Players geholfen
+- Wassermonster Logik geholfen zu implementieren
+
 
