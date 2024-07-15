@@ -155,7 +155,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
-  attack: {fileID: 8300000, guid: 77905954e2abc324f8666941be4004dd, type: 3}
+  attack: {fileID: 8300000, guid: 83298fef135927b4ebf035682589f0fd, type: 3}
   sizzle: {fileID: 8300000, guid: e9ebcc82a54ec984584fc4c82f522745, type: 3}
 --- !u!70 &6032175286681112987
 CapsuleCollider2D:
@@ -202,9 +202,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 48f7717c54cf1d14dae0fc2703584fc4, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 77905954e2abc324f8666941be4004dd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 83298fef135927b4ebf035682589f0fd, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0

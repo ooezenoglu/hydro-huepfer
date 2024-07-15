@@ -9818,6 +9818,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5716738848759039163, guid: f0be5908b302cec4cbeec487acbc889a, type: 3}
+      propertyPath: attack
+      value: 
+      objectReference: {fileID: 8300000, guid: 83298fef135927b4ebf035682589f0fd, type: 3}
     - target: {fileID: 7812896468431487405, guid: f0be5908b302cec4cbeec487acbc889a, type: 3}
       propertyPath: m_Name
       value: MonsterRight_0
@@ -9826,6 +9830,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8632677999633116217, guid: f0be5908b302cec4cbeec487acbc889a, type: 3}
+      propertyPath: m_Volume
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8632677999633116217, guid: f0be5908b302cec4cbeec487acbc889a, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 83298fef135927b4ebf035682589f0fd, type: 3}
     - target: {fileID: 8632677999633116217, guid: f0be5908b302cec4cbeec487acbc889a, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
