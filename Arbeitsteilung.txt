@@ -15,6 +15,11 @@ Franziska Augustinowski:
 	Player: laufen nach links und rechts, sterben, springen etc
 	Wassermonster: laufen links und rechts
 - am Anfang mit den Animationen des Players geholfen
-- Wassermonster Logik geholfen zu implementieren
+- Wassermonster Logik implementiert
+
+Hasan Camci:
+- Player vorläufige Bewegung des Spielers implementiert
+- Animationen des Players erstellt 
+- Animation der Wassermonster erstellt und implementiert
 
 
