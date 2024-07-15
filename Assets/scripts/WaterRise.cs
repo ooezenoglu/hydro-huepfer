@@ -10,8 +10,6 @@ public class WaterRise : MonoBehaviour
     private float _baseSpeed;
     private float _distance;
     private GameObject _player;
-
-    // Audio
     private AudioSource audioSource;
     public AudioClip whooshSound;
 
@@ -28,7 +26,6 @@ public class WaterRise : MonoBehaviour
     private void Update()
     {
         if (!Player.PlayerIsAlive) return;
-        //TODO: after first jump -> boolean
         transform.Translate(Vector3.up * (speed * Time.deltaTime));
 
         DistanceBoost();
@@ -36,6 +33,8 @@ public class WaterRise : MonoBehaviour
         KillPlayer();
     }
 
+
+    // Falls die Distanz zwischen Wasser und Spieler zu hoch ist, wird das Wasser wieder schneller, damit der Spieler nicht unendlich
     private void DistanceBoost()
     {
         _distance = Vector2.Distance(transform.position, _cam.transform.position);
@@ -57,7 +56,6 @@ public class WaterRise : MonoBehaviour
             audioSource.PlayOneShot(whooshSound);
             GameController.GameOver();
             Player.PlayerIsAlive = false;
-            //UnityEngine.Object.Destroy(_player);
         } 
     }
 }

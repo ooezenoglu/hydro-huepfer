@@ -29,4 +29,12 @@ Hasan Camci:
   + Logik für das An- und Abschalten von Soundeffects
 - Game Over Screen
 
+Sherif Lezi:
+- Player Bewegung verbessert und spring Animation hinzugefügt
+- Wasserwellen Sprite/Animation erstellt und auch die Skripte für die Wasserwelle gemacht
+- Audiomixer mit einem Slider hinzugefügt im Main menu
+- Main menu Scene gebaut
+- Todesanimation eingebaut mit zoom
+
+
 
