@@ -135,7 +135,7 @@ public class Player : MonoBehaviour
                 rb.velocity = new Vector2(0, speed);
                 isClimbing = true;
             }
-            else if (Input.GetKey(KeyCode.DownArrow))
+            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
             {
                rb.velocity = new Vector2(0, -speed);
                 isClimbing = true;
