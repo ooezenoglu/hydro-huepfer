@@ -20,7 +20,7 @@ public class MenüManager : MonoBehaviour
         #if UNITY_EDITOR
             EditorApplication.isPlaying = false;
         #else
-            Application.Quit(); // Quit the application in a built game
+            Application.Quit(); 
         #endif
     }
 }

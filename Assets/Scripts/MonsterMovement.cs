@@ -27,7 +27,7 @@ public class MonsterMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
 
         if (attack == null || sizzle == null)
         {
